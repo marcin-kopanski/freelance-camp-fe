@@ -23,6 +23,7 @@ import { AppRoutingModule } from './app-routing.module';
     ProposalShowComponent
   ],
   imports: [
+    NgbModule.forRoot(),
     AppRoutingModule,
     BrowserModule,
     FormsModule
