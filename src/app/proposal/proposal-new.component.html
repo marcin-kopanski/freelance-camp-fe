@@ -11,9 +11,10 @@
               type="text"
               id="customer"
               name="customer"
+              class="form-control"
               placeholder="ABC Company"
               required >
-            <div [hidden]="customer.valid || customer.pristine">
+            <div [hidden]="customer.valid || customer.pristine" class="alert alert-danger mt-1" role="alert">
               Customer name is required
             </div>
           </div>
@@ -25,9 +26,10 @@
               type="text"
               id="portfolio_url"
               name="portfolio_url"
+              class="form-control"
               placeholder="http://"
               required>
-            <div [hidden]="portfolio_url.valid || portfolio_url.pristine">
+            <div [hidden]="portfolio_url.valid || portfolio_url.pristine" class="alert alert-danger mt-1" role="alert">
               Portfolio URL is required
             </div>
           </div>
@@ -39,36 +41,40 @@
               type="text"
               id="tools"
               name="tools"
+              class="form-control"
               placeholder="Ruby on Rails, Angular"
               required>
-            <div [hidden]="tools.valid || tools.pristine">
+            <div [hidden]="tools.valid || tools.pristine" class="alert alert-danger mt-1" role="alert">
               Tools is required
             </div>
           </div>
 
-          <div class="form-group">
-            <label for="estimated_hours">Estimated hours</label>
-            <input #estimated_hours='ngModel'
-              [(ngModel)]="proposal.estimated_hours"
-              type="number"
-              id="estimated_hours"
-              name="estimated_hours"
-              required>
-            <div [hidden]="estimated_hours.valid || estimated_hours.pristine">
-              Estimated hours is required
+          <div class="form-row">
+            <div class="col">
+              <label for="estimated_hours">Estimated hours</label>
+              <input #estimated_hours='ngModel'
+                [(ngModel)]="proposal.estimated_hours"
+                type="number"
+                id="estimated_hours"
+                name="estimated_hours"
+                class="form-control"
+                required>
+              <div [hidden]="estimated_hours.valid || estimated_hours.pristine" class="alert alert-danger mt-1" role="alert">
+                Estimated hours is required
+              </div>
             </div>
-          </div>
-
-          <div class="form-group">
-            <label for="hourly_rate">Hourly rate</label>
-            <input #hourly_rate='ngModel'
-              [(ngModel)]="proposal.hourly_rate"
-              type="number"
-              id="hourly_rate"
-              name="hourly_rate"
-              required>
-            <div [hidden]="hourly_rate.valid || hourly_rate.pristine">
-              Hourly rate is required
+            <div class="col">
+              <label for="hourly_rate">Hourly rate</label>
+              <input #hourly_rate='ngModel'
+                [(ngModel)]="proposal.hourly_rate"
+                type="number"
+                id="hourly_rate"
+                name="hourly_rate"
+                class="form-control"
+                required>
+              <div [hidden]="hourly_rate.valid || hourly_rate.pristine" class="alert alert-danger mt-1" role="alert">
+                Hourly rate is required
+              </div>
             </div>
           </div>
 
@@ -79,8 +85,9 @@
               type="number"
               id="weeks_to_complete"
               name="weeks_to_complete"
+              class="form-control"
               required>
-            <div [hidden]="weeks_to_complete.valid || weeks_to_complete.pristine">
+            <div [hidden]="weeks_to_complete.valid || weeks_to_complete.pristine" class="alert alert-danger mt-1" role="alert">
               Weeks to Complete is required
             </div>
           </div>
@@ -92,6 +99,7 @@
               type="text"
               id="client_email"
               name="client_email"
+              class="form-control"
               placeholder="test@test.com">
           </div>
         </form>
