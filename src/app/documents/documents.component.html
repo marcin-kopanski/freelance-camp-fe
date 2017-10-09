@@ -1,16 +1,18 @@
 <div class="container">
-  <h1 class="headline">{{ pageTitle }}</h1>
+  <div class="row">
+    <h1 class="headline">{{ pageTitle }}</h1>
 
-  <div class="d-flex flex-column">
-    <div class="card mb-3" *ngFor="let doc of documents">
-      <img class="card-img-top" src="{{ doc.image_url }}" alt="Doc image" width="100%">
-      <div class="card-body">
-        <h4 class="card-title">{{ doc.title }}</h4>
-        <p class="card-text">{{ doc.description }}</p>
-        <a href="{{ doc.file_url }}" class="btn btn-primary">Download file</a>
-      </div>
-      <div class="card-footer">
-        <p class="card-text text-right"><small class="text-muted">{{ doc.updated_at }}</small></p>
+    <div class="d-flex flex-column">
+      <div class="card mb-3" *ngFor="let doc of documents">
+        <img class="card-img-top" src="{{ doc.image_url }}" alt="Doc image" width="100%">
+        <div class="card-body">
+          <h4 class="card-title">{{ doc.title }}</h4>
+          <p class="card-text">{{ doc.description }}</p>
+          <a href="{{ doc.file_url }}" class="btn btn-primary">Download file</a>
+        </div>
+        <div class="card-footer">
+          <p class="card-text text-right"><small class="text-muted">{{ doc.updated_at }}</small></p>
+        </div>
       </div>
     </div>
   </div>
