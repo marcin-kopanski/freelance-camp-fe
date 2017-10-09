@@ -1,25 +1,27 @@
-<nav class="navbar navbar-expand-lg navbar-light fixed-top nav-styles">
-  <div class="container">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a routerLink="/home" routerLinkActive="active" class="nav-link">Home</a>
-      </li>
-      <li class="nav-item">
-        <a routerLink="/documents" routerLinkActive="active" class="nav-link">Docs</a>
-      </li>
-      <li class="nav-item dropdown">
-        <div ngbDropdown class="d-inline-block dropdown-links">
-          <button ngbDropdownToggle id="proposalDropdown"
-            class="btn btn-outline-primary">Proposals</button>
-          <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="proposalDropdown">
-            <a routerLink="/proposals" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="dropdown-item">Proposals</a>
-            <a routerLink="/proposals/new" routerLinkActive="active" class="dropdown-item">New Proposal</a>
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top nav-styles">
+    <div class="container">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a routerLink="/home" routerLinkActive="active" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/documents" routerLinkActive="active" class="nav-link">Docs</a>
+        </li>
+        <li class="nav-item dropdown">
+          <div ngbDropdown class="d-inline-block dropdown-links">
+            <button ngbDropdownToggle id="proposalDropdown"
+              class="btn btn-outline-primary">Proposals</button>
+            <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="proposalDropdown">
+              <a routerLink="/proposals" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="dropdown-item">Proposals</a>
+              <a routerLink="/proposals/new" routerLinkActive="active" class="dropdown-item">New Proposal</a>
+            </div>
           </div>
-        </div>
-      </li>
-    </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="app-body">
+    <router-outlet></router-outlet>
   </div>
-</nav>
-<div class="app-body">
-  <router-outlet></router-outlet>
 </div>
