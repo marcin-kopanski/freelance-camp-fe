@@ -11,7 +11,9 @@
           <a href="{{ doc.file_url }}" class="btn btn-primary">Download file</a>
         </div>
         <div class="card-footer">
-          <p class="card-text text-right"><small class="text-muted">{{ doc.updated_at }}</small></p>
+          <p class="card-text text-right">
+            <small class="text-muted">Last updated: {{ doc.updated_at | date }}</small>
+          </p>
         </div>
       </div>
     </div>
