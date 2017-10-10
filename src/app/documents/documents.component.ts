@@ -26,7 +26,8 @@ export class DocumentsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.getDocuments();
+    let timer = Observable.timer(0, 5000);
+    timer.subscribe(() => this.getDocuments());
   }
 
   getDocuments() {
