@@ -3,7 +3,7 @@
     <div class="col-md-6">
       <h1>Proposal New</h1>
       <div class="">
-        <form #proposalForm="ngForm">
+        <form (ngSubmit)="createProposal(proposal)" #proposalForm="ngForm">
           <div class="form-group">
             <label for="customer">Customer Name</label>
             <input #customer="ngModel"
@@ -105,6 +105,11 @@
               class="form-control form-control-sm"
               placeholder="test@test.com">
           </div>
+
+          <button class="btn btn-primary btn-block" type="submit" [disabled]="!proposalForm.form.valid"
+            [hidden]="submitted">
+            Generate Proposal
+          </button>
         </form>
       </div>
     </div>

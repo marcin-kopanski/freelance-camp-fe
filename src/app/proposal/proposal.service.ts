@@ -7,6 +7,8 @@ import { Proposal } from './proposal';
 @Injectable()
 export class ProposalService {
   private proposalsUrl = "https://my-rails-marcin-kopanski.c9users.io:8082/proposals";
+  private headers = new Headers({ 'Content-Type': 'application/json' });
+  private options = new RequestOptions({ headers: this.headers });
 
   constructor(
     private http: Http
@@ -20,6 +22,11 @@ export class ProposalService {
 
   getProposal(id:number) {
     return this.http.get(this.proposalsUrl + "/" + id + ".json");
+  }
+
+  postProposal(proposal) {
+    return this.http.post(this.proposalsUrl, JSON.stringify(proposal), { headers: this.headers })
+      .map((res: Response) => res.json());
   }
 
   private handleError (error: Response | any) {
